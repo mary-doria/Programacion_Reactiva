@@ -35,7 +35,7 @@ En la programación reactiva aplicada a servicios, los eventos y los streams jue
           return userService.getUserById(id);
       }
 
-  }```
+  }
 
 
 ## Streams
@@ -55,7 +55,7 @@ En la programación reactiva aplicada a servicios, los eventos y los streams jue
       }
   
 
-  }```
+  }
 
 Flujo de Datos de Transacciones: En un sistema financiero, puede proporcionar una secuencia continua de transacciones realizadas por los usuarios.
 
@@ -83,7 +83,7 @@ Flujo de Datos de Transacciones: En un sistema financiero, puede proporcionar un
 
 Este proyecto Java demuestra cómo utilizar Mono para manejar errores y excepciones durante el procesamiento de una transferencia bancaria nacional.
 
-## Implementación con Mono
+###  Implementación con Mono
 
 El método `procesarTransferencia` en la clase `TransferService` simula el procesamiento de una transferencia bancaria. Si se cumplen ciertas condiciones, como un monto de transferencia excesivo o la falta de un beneficiario, se lanzarán excepciones correspondientes. Estas excepciones son manejadas utilizando Mono, que puede emitir un flujo de datos tanto para el caso de éxito como para el caso de error.
 
@@ -123,7 +123,7 @@ public class TransferService {
 
 Este proyecto Java utiliza Flux para analizar datos de transacciones bancarias en tiempo real y detectar patrones sospechosos que podrían indicar actividad fraudulenta. El sistema genera alertas instantáneas para que los equipos de seguridad bancaria investiguen y tomen medidas apropiadas para prevenir el fraude.
 
-## Implementación con Flux
+###  Implementación con Flux
 
 El procesamiento de datos en tiempo real se realiza utilizando Flux para gestionar el flujo continuo de transacciones bancarias. Se aplican filtros y análisis en tiempo real para identificar patrones sospechosos, como transacciones inusuales o intentos de acceso no autorizado a cuentas.
 
@@ -146,4 +146,4 @@ public class FraudDetectionService {
         service.detectarFraude(transacciones)
             .subscribe(System.out::println); // Mostrar alertas de fraude en la consola
     }
-}```
+}
