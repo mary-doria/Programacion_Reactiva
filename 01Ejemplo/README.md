@@ -35,7 +35,7 @@ En la programación reactiva aplicada a servicios, los eventos y los streams jue
           return userService.getUserById(id);
       }
 
-  }
+  }```
 
 
 ## Streams
@@ -55,7 +55,7 @@ En la programación reactiva aplicada a servicios, los eventos y los streams jue
       }
   
 
-  }
+  }```
 
 Flujo de Datos de Transacciones: En un sistema financiero, puede proporcionar una secuencia continua de transacciones realizadas por los usuarios.
 
@@ -83,12 +83,11 @@ Flujo de Datos de Transacciones: En un sistema financiero, puede proporcionar un
 
 Este proyecto Java demuestra cómo utilizar Mono para manejar errores y excepciones durante el procesamiento de una transferencia bancaria nacional.
 
+## Implementación con Mono
 
 El método `procesarTransferencia` en la clase `TransferService` simula el procesamiento de una transferencia bancaria. Si se cumplen ciertas condiciones, como un monto de transferencia excesivo o la falta de un beneficiario, se lanzarán excepciones correspondientes. Estas excepciones son manejadas utilizando Mono, que puede emitir un flujo de datos tanto para el caso de éxito como para el caso de error.
 
 ```java
-import reactor.core.publisher.Mono;
-
 public class TransferService {
     
     public Mono<String> procesarTransferencia(String beneficiario, double monto) {
@@ -116,6 +115,7 @@ public class TransferService {
     }
 }
 
+```
 
 ## Flux
 
@@ -146,4 +146,4 @@ public class FraudDetectionService {
         service.detectarFraude(transacciones)
             .subscribe(System.out::println); // Mostrar alertas de fraude en la consola
     }
-}
+}```
