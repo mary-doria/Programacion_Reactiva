@@ -68,15 +68,15 @@ Flujo de Datos de Transacciones: En un sistema financiero, puede proporcionar un
 
 ## Mono
 
-- **Gestión de Solicitud de Créditos: ** Cuando un cliente solicita un préstamo o una línea de crédito, el proceso de evaluación y aprobación puede involucrar múltiples pasos y decisiones. Un flujo Mono podría utilizarse para representar la solicitud de crédito de un cliente y su estado de aprobación, que podría ser aprobado, rechazado o pendiente de revisión.
+- **Gestión de Solicitud de Créditos:** Cuando un cliente solicita un préstamo o una línea de crédito, el proceso de evaluación y aprobación puede involucrar múltiples pasos y decisiones. Un flujo Mono podría utilizarse para representar la solicitud de crédito de un cliente y su estado de aprobación, que podría ser aprobado, rechazado o pendiente de revisión.
 
-- **Notificaciones de Alerta de Saldo Bajo: ** Se puede utilizar Mono para representar el estado del saldo de la cuenta de un cliente. Cuando el saldo de la cuenta cae por debajo de un umbral específico, se puede activar un flujo Mono para enviar una notificación de alerta al cliente, advirtiéndole sobre la situación y ofreciendo opciones para evitar cargos por sobregiro
+- **Notificaciones de Alerta de Saldo Bajo:** Se puede utilizar Mono para representar el estado del saldo de la cuenta de un cliente. Cuando el saldo de la cuenta cae por debajo de un umbral específico, se puede activar un flujo Mono para enviar una notificación de alerta al cliente, advirtiéndole sobre la situación y ofreciendo opciones para evitar cargos por sobregiro
 
 
 - **Gestión de Errores y Excepciones:**  pueden surgir errores o excepciones durante el procesamiento de una transferencia nacional, como información incorrecta del beneficiario o fondos insuficientes en la cuenta del remitente. Un flujo Mono podría manejar estos casos de manera adecuada, proporcionando mecanismos para manejar errores, revertir transacciones si es necesario y notificar a las partes afectadas
 
 ## Flux
 
-- **Gestión de Carteras de Inversión: **  Flux podría utilizarse para transmitir datos en tiempo real sobre los precios de mercado, el rendimiento de los activos y las noticias financieras relevantes, permitiendo a los gestores de cartera tomar decisiones informadas sobre la asignación de activos y la gestión del riesgo.
+- **Gestión de Carteras de Inversión:**  Flux podría utilizarse para transmitir datos en tiempo real sobre los precios de mercado, el rendimiento de los activos y las noticias financieras relevantes, permitiendo a los gestores de cartera tomar decisiones informadas sobre la asignación de activos y la gestión del riesgo.
 
--**Detección y Prevención de Fraude: ** Flux puede ser utilizado para analizar datos de transacciones bancarias en tiempo real y detectar patrones sospechosos que podrían indicar actividad fraudulenta, como transacciones inusuales o intentos de acceso no autorizado a cuentas. El sistema podría generar alertas instantáneas para que los equipos de seguridad bancaria investiguen y tomen medidas apropiadas para prevenir el fraude.
+- **Detección y Prevención de Fraude:** Flux puede ser utilizado para analizar datos de transacciones bancarias en tiempo real y detectar patrones sospechosos que podrían indicar actividad fraudulenta, como transacciones inusuales o intentos de acceso no autorizado a cuentas. El sistema podría generar alertas instantáneas para que los equipos de seguridad bancaria investiguen y tomen medidas apropiadas para prevenir el fraude.
