@@ -19,11 +19,6 @@ En la programación reactiva aplicada a servicios, los eventos y los streams jue
 - **Transmisión de Eventos de Registro:** En un sistema de registro o monitoreo, puede representar una secuencia de eventos registrados por los diferentes componentes del sistema.
 
 
-
-# Ejemplos de Eventos y Streams en Servicios
-
-En la programación reactiva aplicada a servicios, los eventos y los streams juegan un papel fundamental en la creación de sistemas altamente responsivos y eficientes. Aquí hay algunos ejemplos de eventos y streams en el contexto de servicios:
-
 ## Eventos
 
 - **Evento de Solicitud HTTP:** Ocurre cuando un cliente realiza una solicitud HTTP a un servicio web para obtener o enviar datos. Por ejemplo:
@@ -80,3 +75,75 @@ Flujo de Datos de Transacciones: En un sistema financiero, puede proporcionar un
 - **Gestión de Carteras de Inversión:**  Flux podría utilizarse para transmitir datos en tiempo real sobre los precios de mercado, el rendimiento de los activos y las noticias financieras relevantes, permitiendo a los gestores de cartera tomar decisiones informadas sobre la asignación de activos y la gestión del riesgo.
 
 - **Detección y Prevención de Fraude:** Flux puede ser utilizado para analizar datos de transacciones bancarias en tiempo real y detectar patrones sospechosos que podrían indicar actividad fraudulenta, como transacciones inusuales o intentos de acceso no autorizado a cuentas. El sistema podría generar alertas instantáneas para que los equipos de seguridad bancaria investiguen y tomen medidas apropiadas para prevenir el fraude.
+
+
+## Mono 
+
+- **Gestión de Errores y Excepciones:**
+
+Este proyecto Java demuestra cómo utilizar Mono para manejar errores y excepciones durante el procesamiento de una transferencia bancaria nacional.
+
+
+El método `procesarTransferencia` en la clase `TransferService` simula el procesamiento de una transferencia bancaria. Si se cumplen ciertas condiciones, como un monto de transferencia excesivo o la falta de un beneficiario, se lanzarán excepciones correspondientes. Estas excepciones son manejadas utilizando Mono, que puede emitir un flujo de datos tanto para el caso de éxito como para el caso de error.
+
+```java
+import reactor.core.publisher.Mono;
+
+public class TransferService {
+    
+    public Mono<String> procesarTransferencia(String beneficiario, double monto) {
+        // Simulación de procesamiento de transferencia
+        if (monto > 10000) {
+            // Si el monto supera un límite, se lanza una excepción
+            return Mono.error(new RuntimeException("Monto excede el límite permitido"));
+        } else if (beneficiario.isEmpty()) {
+            // Si no se proporciona un beneficiario, se lanza una excepción
+            return Mono.error(new IllegalArgumentException("El beneficiario no puede estar vacío"));
+        } else {
+            // Si la transferencia se procesa correctamente, se devuelve un mensaje de confirmación
+            return Mono.just("Transferencia a " + beneficiario + " por $" + monto + " procesada correctamente");
+        }
+    }
+    
+    public static void main(String[] args) {
+        TransferService service = new TransferService();
+        
+        service.procesarTransferencia("Juan Perez", 5000)
+            .subscribe(
+                System.out::println, // Manejo del caso de éxito
+                error -> System.err.println("Error: " + error.getMessage()) // Manejo del error
+            );
+    }
+}
+
+
+## Flux
+
+- **Detección y Prevención de Fraude**
+
+Este proyecto Java utiliza Flux para analizar datos de transacciones bancarias en tiempo real y detectar patrones sospechosos que podrían indicar actividad fraudulenta. El sistema genera alertas instantáneas para que los equipos de seguridad bancaria investiguen y tomen medidas apropiadas para prevenir el fraude.
+
+## Implementación con Flux
+
+El procesamiento de datos en tiempo real se realiza utilizando Flux para gestionar el flujo continuo de transacciones bancarias. Se aplican filtros y análisis en tiempo real para identificar patrones sospechosos, como transacciones inusuales o intentos de acceso no autorizado a cuentas.
+
+```java
+import reactor.core.publisher.Flux;
+
+public class FraudDetectionService {
+    
+    public Flux<String> detectarFraude(Flux<Transaction> transacciones) {
+        return transacciones
+            .filter(transaction -> transaction.getAmount() > 10000) // Filtrar transacciones de monto alto
+            .map(transaction -> "Alerta de fraude: Transacción inusual detectada - " + transaction.toString()); // Mapear transacciones sospechosas a mensajes de alerta
+    }
+    
+    public static void main(String[] args) {
+        Flux<Transaction> transacciones = // Obtener flujo de datos de transacciones bancarias en tiempo real
+        
+        FraudDetectionService service = new FraudDetectionService();
+        
+        service.detectarFraude(transacciones)
+            .subscribe(System.out::println); // Mostrar alertas de fraude en la consola
+    }
+}
