@@ -85,7 +85,7 @@ Este proyecto Java demuestra cómo utilizar Mono para manejar errores y excepcio
 
 ###  Implementación con Mono
 
-El método `procesarTransferencia` en la clase `TransferService` simula el procesamiento de una transferencia bancaria. Si se cumplen ciertas condiciones, como un monto de transferencia excesivo o la falta de un beneficiario, se lanzarán excepciones correspondientes. Estas excepciones son manejadas utilizando Mono, que puede emitir un flujo de datos tanto para el caso de éxito como para el caso de error.
+El método `procesarTransferencia` en la clase `TransferService` simula el procesamiento de una transferencia bancaria. Si se cumplen ciertas condiciones, como un monto de transferencia excesivo o la falta de un beneficiario, se lanzarán excepciones correspondientes. Estas excepciones son manejadas utilizando Mono, que puede emitir un valor tanto para el caso de éxito como para el caso de error.
 
 ```java
 public class TransferService {
